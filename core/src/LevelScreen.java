@@ -1,4 +1,6 @@
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -13,6 +15,13 @@ public class LevelScreen extends BaseScreen {
     Label scoreLabel;
     Label ballsLabel;
     Label messageLabel;
+
+    Sound bounceSound;
+    Sound brickBumpSound;
+    Sound wallBumpSound;
+    Sound itemAppearSound;
+    Sound itemCollectSound;
+    Music backgroundMusic;
 
     public void initialize() {
 
