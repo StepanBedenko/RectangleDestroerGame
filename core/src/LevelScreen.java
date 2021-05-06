@@ -68,6 +68,18 @@ public class LevelScreen extends BaseScreen {
         uiTable.add(ballsLabel);
         uiTable.row();
         uiTable.add(messageLabel).colspan(3).expandY();
+
+        bounceSound = Gdx.audio.newSound(Gdx.files.internal("boing.wav"));
+        brickBumpSound = Gdx.audio.newSound(Gdx.files.internal("bump.wav"));
+        wallBumpSound = Gdx.audio.newSound(Gdx.files.internal("bump-low.wav"));
+        itemAppearSound = Gdx.audio.newSound(Gdx.files.internal("swoosh.wav"));
+        itemCollectSound = Gdx.audio.newSound(Gdx.files.internal("pop.wav"));
+
+        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("Rollin-at-5.mp3"));
+        backgroundMusic.setLooping(true);
+        backgroundMusic.setVolume(0.50f);
+        backgroundMusic.play();
+
     }
 
     public void update(float dt) {
@@ -84,6 +96,7 @@ public class LevelScreen extends BaseScreen {
        for(BaseActor wall : BaseActor.getList(mainStage, "Wall")){
            if(ball.overlaps(wall)){
                ball.bounceOff(wall);
+               wallBumpSound.play();
            }
        }
 
@@ -95,10 +108,15 @@ public class LevelScreen extends BaseScreen {
                score += 100;
                scoreLabel.setText("Score: " + score);
 
+               brickBumpSound.play();
+
                float spawnProbability = 100;
                if(MathUtils.random(0,100) < spawnProbability){
                    Item i = new Item(0,0,mainStage);
                    i.centerAtActor(brick);
+
+                   itemAppearSound.play();
+
                }
            }
        }
@@ -108,6 +126,8 @@ public class LevelScreen extends BaseScreen {
            float paddlePercentHit = (ballCenterX - paddle.getX()) / paddle.getWidth();
            float bounceAngle = MathUtils.lerp(150,30,paddlePercentHit);
            ball.setMotionAngle(bounceAngle);
+
+           bounceSound.play();
        }
 
        if(BaseActor.count(mainStage, "Brick") == 0){
@@ -149,6 +169,7 @@ public class LevelScreen extends BaseScreen {
 
                paddle.setBoundaryRectangle();
                item.remove();
+               itemCollectSound.play();
            }
        }
     }
