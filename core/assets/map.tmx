@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="26" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="17">
+ <tileset firstgid="1" name="wall-square" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="wall-square.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="name" value="Wall"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="brick-colors" tilewidth="64" tileheight="32" tilecount="8" columns="2">
+  <image source="brick-colors.png" width="128" height="128"/>
+  <tile id="0">
+   <properties>
+    <property name="color" value="red"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="color" value="orange"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="color" value="yellow"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="color" value="green"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="color" value="blue"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="color" value="purple"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="color" value="white"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="color" value="gray"/>
+    <property name="name" value="Brick"/>
+   </properties>
+  </tile>
+ </tileset>
+ <imagelayer id="2" name="Image Layer 1">
+  <image source="large-space.png" width="832" height="640"/>
+ </imagelayer>
+ <objectgroup id="3" name="Object Layer 1">
+  <object id="2" gid="1" x="0" y="64" width="832" height="64"/>
+  <object id="3" gid="1" x="0" y="640" width="32" height="576"/>
+  <object id="4" gid="1" x="800" y="640" width="32" height="576"/>
+  <object id="5" gid="6" x="224" y="256" width="64" height="32"/>
+  <object id="6" gid="6" x="544" y="256" width="64" height="32"/>
+  <object id="7" gid="4" x="352" y="320" width="64" height="32"/>
+  <object id="8" gid="4" x="416" y="320" width="64" height="32"/>
+  <object id="9" gid="4" x="384" y="288" width="64" height="32"/>
+  <object id="10" gid="2" x="256" y="352" width="64" height="32"/>
+  <object id="11" gid="2" x="288" y="384" width="64" height="32"/>
+  <object id="12" gid="2" x="352" y="416" width="64" height="32"/>
+  <object id="13" gid="2" x="416" y="416" width="64" height="32"/>
+  <object id="14" gid="2" x="480" y="384" width="64" height="32"/>
+  <object id="15" gid="2" x="512" y="352" width="64" height="32"/>
+  <object id="16" x="416" y="576">
+   <properties>
+    <property name="name" value="start"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
