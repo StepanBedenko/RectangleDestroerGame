@@ -5,6 +5,6 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Game myGame = new RectangleGame();
-		LwjglApplication launcher = new LwjglApplication(myGame,"Rectangle Destroyer", 800, 600);
+		LwjglApplication launcher = new LwjglApplication(myGame,"Rectangle Destroyer", 832, 640);
 	}
 }
